@@ -1,0 +1,17 @@
+
+  <%= form_for @shortened_url do |form| %>
+    <p>
+      <%= form.text_field :link, placeholder: "http://www.tell-me-why-you-no-tiny.com", class: "form-control input-md" %>
+    </p>
+   
+    <% if @shortened_url.errors[:link].any? %>
+      <p class='error-messages'>
+        That url is too tiny!
+      </p>
+    <% end %>
+   
+    <p>
+      <%= form.submit "Make me tiny", class: "btn btn-block btn-success" , :html => { :style => 'width:100%;'} %>
+    </p>
+   
+  <% end %>

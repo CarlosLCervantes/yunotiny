@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>y u Tiny</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/css/bootstrap.min.css" rel="stylesheet">
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head> 
+<body>
+<div class="container">
+<div class="row">
+  <div class="page-header"><h2>Y u no tiny?</h2></div>
+  <form class="form-horizontal">
+
+  </form>
+  <%= yield %>
+        <% if flash[:masked_id].present? %>
+        <h1 style="text-align:center;">You tiny now: localhost:3000/<%=flash[:masked_id] %>  </h1>
+<% end %> 
+</div> <!--./row -->
+</div> <!--./container -->
+
+</body>
+</html>
+
+
+
+
