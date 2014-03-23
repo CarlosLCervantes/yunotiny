@@ -17,7 +17,7 @@
   </form>
   <%= yield %>
         <% if flash[:masked_id].present? %>
-        <div style="text-align:center;"><h1 style="display: inline-block;text-align:center;color:white;">You tiny now:&nbsp;</h1><h1 id="tinyurl" style="display: inline-block;color:white;">localhost:3000/<%=flash[:masked_id] %> </h1></div>
+        <div style="text-align:center;"><h1 style="display: inline-block;text-align:center;color:white;">You tiny now:&nbsp;</h1><h1 id="tinyurl" style="display: inline-block;color:white;">yutiny.herokuapp.com/<%=flash[:masked_id] %> </h1></div>
 <% end %> 
 </div> <!--./row -->
 </div> <!--./container -->
