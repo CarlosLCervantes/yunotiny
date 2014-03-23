@@ -3,22 +3,19 @@
     margin: 20px 0;
     padding-bottom: 9px;
     text-align: center;
+    
 }
 
 .form-control {
     border: 1px solid #D6D6D6;
     border-radius: 0;
     box-shadow: none;
-    height: 50px;
-    padding: 6px 15px;
-}
-
-body {
-    background-color: #ee7778;
+    height: 60px;
+    padding: 0px 15px;
 }
 
 .row {
-    background: #ededed;
+    background: #356AA0;
     padding: 20px 50px 20px 50px;
     margin: 100px;
 }
@@ -36,14 +33,18 @@ legend {
 }
 
 .btn {
-    padding: 10px;
+    padding: 15px;
     border-radius: 0;
     border: none;
     font-size: 21px;
+    background-color:#B02B2C;
+    &:hover { background-color: #990606 }
 }
 
 body
 {
-background-image:url('http://i2.kym-cdn.com/entries/icons/original/000/004/006/y-u-no-guy.jpg');
+background-image:url('http://i3.kym-cdn.com/photos/images/newsfeed/000/680/357/f17.gif');
 background-repeat:repeat;
 }
+
+.form-control::-webkit-input-placeholder { font-size: 16px ; }

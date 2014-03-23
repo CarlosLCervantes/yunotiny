@@ -1,28 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>y u Tiny</title>
+  <title >y u Tiny</title>
   <link href="//netdna.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/css/bootstrap.min.css" rel="stylesheet">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head> 
+
 <body>
 <div class="container">
 <div class="row">
-  <div class="page-header"><h2>Y u no tiny?</h2></div>
+  <div class="page-header"><h1 style="color:white;"> Y u no tiny?</h1></div>
   <form class="form-horizontal">
 
   </form>
   <%= yield %>
         <% if flash[:masked_id].present? %>
-        <h1 style="text-align:center;">You tiny now: yutiny.herokuapp.com/<%=flash[:masked_id] %>  </h1>
+        <div style="text-align:center;"><h1 style="display: inline-block;text-align:center;color:white;">You tiny now:&nbsp;</h1><h1 id="tinyurl" style="display: inline-block;color:white;">localhost:3000/<%=flash[:masked_id] %> </h1></div>
 <% end %> 
 </div> <!--./row -->
 </div> <!--./container -->
 
 </body>
 </html>
+
+<script>
+function selectText(element) {
+    var doc = document
+        , text = doc.getElementById(element)
+        , range, selection
+    ;    
+    if (doc.body.createTextRange) { //ms
+        range = doc.body.createTextRange();
+        range.moveToElementText(text);
+        range.select();
+    } else if (window.getSelection) { //all others
+        selection = window.getSelection();        
+        range = doc.createRange();
+        range.selectNodeContents(text);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+}
+selectText("tinyurl");
+
+</script>
+
 
 
 

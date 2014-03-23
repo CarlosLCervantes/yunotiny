@@ -1,7 +1,7 @@
 class Url < ActiveRecord::Base
 	validates :link, presence: true
 
-  def to62
+  def to62 
     integer = id
     digits = []
     base62 = (0..9).to_a.concat( ('a'..'z').to_a.concat(('A'..'Z').to_a))
