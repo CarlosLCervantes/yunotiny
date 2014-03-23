@@ -18,7 +18,12 @@
   </form>
   <%= yield %>
         <% if flash[:masked_id].present? %>
-        <div style="text-align:center;"><h1 style="display: inline-block;text-align:center;color:white;">You tiny now:&nbsp;</h1><h1 id="tinyurl" style="display: inline-block;color:white;">yutiny.herokuapp.com/<%=flash[:masked_id] %> </h1></div>
+        <div style="text-align:center;">
+          <h1 style="display: inline-block;text-align:center;color:white;">You tiny now:&nbsp;</h1>
+          <% tiny_url = "yutiny.herokuapp.com/#{flash[:masked_id]}" %>
+          <h1 id="tinyurl" style="display: inline-block;color:white;"><%= tiny_url %> </h1>
+          <button data-clipboard-text="<%= tiny_url%>" id="btnCopy" class="btn btn-small btn-success">Copy to Clipboard</button>
+        </div>
 <% end %> 
 </div> <!--./row -->
 </div> <!--./container -->
@@ -46,6 +51,19 @@ function selectText(element) {
 }
 selectText("tinyurl");
 
+function setupCopy() {
+  var client = new ZeroClipboard(document.getElementById("btnCopy"), { moviePath: "/ZeroClipboard.swf" });
+  client.on( "load", function(client) {
+    client.on( "complete", function(client, args) {
+      alert("Copied text to clipboard: " + args.text);
+    });
+  });
+
+}
+
+$(function(){
+  setupCopy();
+});
 </script>
 
 
